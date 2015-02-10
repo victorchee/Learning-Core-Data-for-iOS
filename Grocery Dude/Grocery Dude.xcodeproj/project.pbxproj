@@ -14,6 +14,8 @@
 		F0F326631A8A476100A1AE88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F326621A8A476100A1AE88 /* Images.xcassets */; };
 		F0F326661A8A476100A1AE88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F326641A8A476100A1AE88 /* LaunchScreen.xib */; };
 		F0F326721A8A476100A1AE88 /* Grocery_DudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F326711A8A476100A1AE88 /* Grocery_DudeTests.m */; };
+		F0F3267E1A8A4DED00A1AE88 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0F3267B1A8A4DCE00A1AE88 /* CoreData.framework */; };
+		F0F326821A8A4E3100A1AE88 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F326811A8A4E3100A1AE88 /* CoreDataHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		F0F3266B1A8A476100A1AE88 /* Grocery DudeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery DudeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F326701A8A476100A1AE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F326711A8A476100A1AE88 /* Grocery_DudeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Grocery_DudeTests.m; sourceTree = "<group>"; };
+		F0F3267B1A8A4DCE00A1AE88 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F0F326801A8A4E3100A1AE88 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		F0F326811A8A4E3100A1AE88 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F3267E1A8A4DED00A1AE88 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		F0F326491A8A476100A1AE88 = {
 			isa = PBXGroup;
 			children = (
+				F0F3267D1A8A4DD900A1AE88 /* Frameworks */,
 				F0F326541A8A476100A1AE88 /* Grocery Dude */,
 				F0F3266E1A8A476100A1AE88 /* Grocery DudeTests */,
 				F0F326531A8A476100A1AE88 /* Products */,
@@ -81,6 +88,7 @@
 		F0F326541A8A476100A1AE88 /* Grocery Dude */ = {
 			isa = PBXGroup;
 			children = (
+				F0F3267F1A8A4E0C00A1AE88 /* Generic Core Data Classes */,
 				F0F326591A8A476100A1AE88 /* AppDelegate.h */,
 				F0F3265A1A8A476100A1AE88 /* AppDelegate.m */,
 				F0F3265C1A8A476100A1AE88 /* ViewController.h */,
@@ -117,6 +125,23 @@
 				F0F326701A8A476100A1AE88 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0F3267D1A8A4DD900A1AE88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0F3267B1A8A4DCE00A1AE88 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0F3267F1A8A4E0C00A1AE88 /* Generic Core Data Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F0F326801A8A4E3100A1AE88 /* CoreDataHelper.h */,
+				F0F326811A8A4E3100A1AE88 /* CoreDataHelper.m */,
+			);
+			name = "Generic Core Data Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +246,7 @@
 			files = (
 				F0F3265E1A8A476100A1AE88 /* ViewController.m in Sources */,
 				F0F3265B1A8A476100A1AE88 /* AppDelegate.m in Sources */,
+				F0F326821A8A4E3100A1AE88 /* CoreDataHelper.m in Sources */,
 				F0F326581A8A476100A1AE88 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +446,7 @@
 				F0F326771A8A476100A1AE88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0F326781A8A476100A1AE88 /* Build configuration list for PBXNativeTarget "Grocery DudeTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +455,7 @@
 				F0F3267A1A8A476100A1AE88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
