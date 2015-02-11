@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0A65541A8B39980040FB35 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB0A65521A8B39980040FB35 /* Model.xcdatamodeld */; };
+		BB0A65571A8B3A7D0040FB35 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0A65561A8B3A7D0040FB35 /* Item.m */; };
 		F0F326581A8A476100A1AE88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F326571A8A476100A1AE88 /* main.m */; };
 		F0F3265B1A8A476100A1AE88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F3265A1A8A476100A1AE88 /* AppDelegate.m */; };
 		F0F3265E1A8A476100A1AE88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F3265D1A8A476100A1AE88 /* ViewController.m */; };
@@ -29,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB0A65531A8B39980040FB35 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BB0A65551A8B3A7D0040FB35 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		BB0A65561A8B3A7D0040FB35 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		F0F326521A8A476100A1AE88 /* Grocery Dude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Dude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F326561A8A476100A1AE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F326571A8A476100A1AE88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,6 +71,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB0A65511A8B39810040FB35 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB0A65521A8B39980040FB35 /* Model.xcdatamodeld */,
+				BB0A65551A8B3A7D0040FB35 /* Item.h */,
+				BB0A65561A8B3A7D0040FB35 /* Item.m */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 		F0F326491A8A476100A1AE88 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +103,7 @@
 		F0F326541A8A476100A1AE88 /* Grocery Dude */ = {
 			isa = PBXGroup;
 			children = (
+				BB0A65511A8B39810040FB35 /* Data Model */,
 				F0F3267F1A8A4E0C00A1AE88 /* Generic Core Data Classes */,
 				F0F326591A8A476100A1AE88 /* AppDelegate.h */,
 				F0F3265A1A8A476100A1AE88 /* AppDelegate.m */,
@@ -244,8 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0A65571A8B3A7D0040FB35 /* Item.m in Sources */,
 				F0F3265E1A8A476100A1AE88 /* ViewController.m in Sources */,
 				F0F3265B1A8A476100A1AE88 /* AppDelegate.m in Sources */,
+				BB0A65541A8B39980040FB35 /* Model.xcdatamodeld in Sources */,
 				F0F326821A8A4E3100A1AE88 /* CoreDataHelper.m in Sources */,
 				F0F326581A8A476100A1AE88 /* main.m in Sources */,
 			);
@@ -458,6 +476,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BB0A65521A8B39980040FB35 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BB0A65531A8B39980040FB35 /* Model.xcdatamodel */,
+			);
+			currentVersion = BB0A65531A8B39980040FB35 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F0F3264A1A8A476100A1AE88 /* Project object */;
 }
