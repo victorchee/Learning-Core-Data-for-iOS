@@ -25,3 +25,21 @@ http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter08.zip
 http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter09.zip
 - 第10章
 http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter10.zip
+- 第11章
+http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter11.zip
+- 第12章
+http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter12.zip
+- 第13章
+http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter13.zip
+- 第14章
+http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter14.zip
+- 第15章
+http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter15.zip
+- 第15章 Mini项目
+http://timroadley.com/LearningCoreData/EasyiCloud.zip
+- 辅助类，可供在自己的项目中使用
+http://timroadley.com/LearningCoreData/Generic%20Core%20Data%20Classes.zip
+- 附录B
+http://timroadley.com/LearningCoreData/GroceryDude-AfterAppendixB.zip
+- 第16章
+http://timroadley.com/LearningCoreData/GroceryDude-AfterChapter16.zip
