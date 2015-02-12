@@ -15,6 +15,7 @@
 		F0F326D51A8D58E600A1AE88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F326D41A8D58E600A1AE88 /* Images.xcassets */; };
 		F0F326D81A8D58E600A1AE88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F326D61A8D58E600A1AE88 /* LaunchScreen.xib */; };
 		F0F326E41A8D58E600A1AE88 /* Grocery_DudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F326E31A8D58E600A1AE88 /* Grocery_DudeTests.m */; };
+		F0F326EF1A8D5B3A00A1AE88 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F326EE1A8D5B3A00A1AE88 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		F0F326DD1A8D58E600A1AE88 /* Grocery DudeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grocery DudeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F326E21A8D58E600A1AE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F326E31A8D58E600A1AE88 /* Grocery_DudeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Grocery_DudeTests.m; sourceTree = "<group>"; };
+		F0F326ED1A8D5B3A00A1AE88 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		F0F326EE1A8D5B3A00A1AE88 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				F0F326D41A8D58E600A1AE88 /* Images.xcassets */,
 				F0F326D61A8D58E600A1AE88 /* LaunchScreen.xib */,
 				F0F326CB1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld */,
+				F0F326ED1A8D5B3A00A1AE88 /* Item.h */,
+				F0F326EE1A8D5B3A00A1AE88 /* Item.m */,
 				F0F326C41A8D58E600A1AE88 /* Supporting Files */,
 			);
 			path = "Grocery Dude";
@@ -222,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0F326EF1A8D5B3A00A1AE88 /* Item.m in Sources */,
 				F0F326CD1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld in Sources */,
 				F0F326CA1A8D58E600A1AE88 /* AppDelegate.m in Sources */,
 				F0F326D01A8D58E600A1AE88 /* ViewController.m in Sources */,

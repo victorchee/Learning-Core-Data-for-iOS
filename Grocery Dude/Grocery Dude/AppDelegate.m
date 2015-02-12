@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Item.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,8 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    [self saveContext];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -36,6 +39,29 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // Demo
+    // insert
+//    NSArray *newItemNames = @[@"Apples", @"Milk", @"Bread", @"Cheese", @"Sausages", @"Butter", @"Orange Juice", @"Cereal", @"Coffee", @"Eggs", @"Tomatoes", @"Fish"];
+//    for (NSString *newItemName in newItemNames) {
+//        Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
+//        newItem.name = newItemName;
+//    }
+    // fetch
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+//    request.sortDescriptors = @[sort];
+//    NSPredicate *filter = [NSPredicate predicateWithFormat:@"name != %@", @"Coffee"];
+//    request.predicate = filter;
+//    [self.managedObjectContext executeFetchRequest:request error:nil];
+//    NSFetchRequest *request = [[self.managedObjectModel fetchRequestTemplateForName:@"Test"] copy];
+//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+//    request.sortDescriptors = @[sort];
+//    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:request error:nil];
+    // delete
+//    for (Item *item in fetchedObjects) {
+//        [self.managedObjectContext deleteObject:item];
+//    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
