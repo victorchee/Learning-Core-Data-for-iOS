@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F038C03A1A90061800907DBD /* Grocery_Dude 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Grocery_Dude 2.xcdatamodel"; sourceTree = "<group>"; };
 		F0F326C11A8D58E600A1AE88 /* Grocery Dude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Dude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F326C51A8D58E600A1AE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F326C61A8D58E600A1AE88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -430,6 +431,7 @@
 				F0F326E91A8D58E600A1AE88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0F326EA1A8D58E600A1AE88 /* Build configuration list for PBXNativeTarget "Grocery DudeTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +440,7 @@
 				F0F326EC1A8D58E600A1AE88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -445,9 +448,10 @@
 		F0F326CB1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				F038C03A1A90061800907DBD /* Grocery_Dude 2.xcdatamodel */,
 				F0F326CC1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodel */,
 			);
-			currentVersion = F0F326CC1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodel */;
+			currentVersion = F038C03A1A90061800907DBD /* Grocery_Dude 2.xcdatamodel */;
 			path = Grocery_Dude.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
