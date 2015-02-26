@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0E73D9E1A9F5DF000ED9A99 /* Measurement.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E73D9D1A9F5DF000ED9A99 /* Measurement.m */; };
+		F0E73DA11A9F5DFC00ED9A99 /* Amount.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E73DA01A9F5DFC00ED9A99 /* Amount.m */; };
+		F0E73DA31A9F5E3C00ED9A99 /* Model2toModel3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = F0E73DA21A9F5E3C00ED9A99 /* Model2toModel3.xcmappingmodel */; };
+		F0E73DA61A9F624900ED9A99 /* MigrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E73DA51A9F624900ED9A99 /* MigrationViewController.m */; };
+		F0E73DAA1A9F6E7600ED9A99 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E73DA91A9F6E7600ED9A99 /* Unit.m */; };
+		F0E73DAE1A9F6ECF00ED9A99 /* Model3toModel4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = F0E73DAD1A9F6ECF00ED9A99 /* Model3toModel4.xcmappingmodel */; };
 		F0F326C71A8D58E600A1AE88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F326C61A8D58E600A1AE88 /* main.m */; };
 		F0F326CA1A8D58E600A1AE88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F326C91A8D58E600A1AE88 /* AppDelegate.m */; };
 		F0F326CD1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0F326CB1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld */; };
@@ -30,6 +36,18 @@
 
 /* Begin PBXFileReference section */
 		F038C03A1A90061800907DBD /* Grocery_Dude 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Grocery_Dude 2.xcdatamodel"; sourceTree = "<group>"; };
+		F0E73D981A9F5C8B00ED9A99 /* Grocery_Dude 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Grocery_Dude 3.xcdatamodel"; sourceTree = "<group>"; };
+		F0E73D9C1A9F5DF000ED9A99 /* Measurement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Measurement.h; sourceTree = "<group>"; };
+		F0E73D9D1A9F5DF000ED9A99 /* Measurement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Measurement.m; sourceTree = "<group>"; };
+		F0E73D9F1A9F5DFC00ED9A99 /* Amount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Amount.h; sourceTree = "<group>"; };
+		F0E73DA01A9F5DFC00ED9A99 /* Amount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amount.m; sourceTree = "<group>"; };
+		F0E73DA21A9F5E3C00ED9A99 /* Model2toModel3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model2toModel3.xcmappingmodel; sourceTree = "<group>"; };
+		F0E73DA41A9F624900ED9A99 /* MigrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrationViewController.h; sourceTree = "<group>"; };
+		F0E73DA51A9F624900ED9A99 /* MigrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrationViewController.m; sourceTree = "<group>"; };
+		F0E73DA71A9F6E0C00ED9A99 /* Grocery_Dude 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Grocery_Dude 4.xcdatamodel"; sourceTree = "<group>"; };
+		F0E73DA81A9F6E7600ED9A99 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		F0E73DA91A9F6E7600ED9A99 /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
+		F0E73DAD1A9F6ECF00ED9A99 /* Model3toModel4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Model3toModel4.xcmappingmodel; sourceTree = "<group>"; };
 		F0F326C11A8D58E600A1AE88 /* Grocery Dude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery Dude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F326C51A8D58E600A1AE88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F326C61A8D58E600A1AE88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,9 +110,19 @@
 				F0F326CE1A8D58E600A1AE88 /* ViewController.h */,
 				F0F326CF1A8D58E600A1AE88 /* ViewController.m */,
 				F0F326D11A8D58E600A1AE88 /* Main.storyboard */,
+				F0E73DA41A9F624900ED9A99 /* MigrationViewController.h */,
+				F0E73DA51A9F624900ED9A99 /* MigrationViewController.m */,
 				F0F326D41A8D58E600A1AE88 /* Images.xcassets */,
 				F0F326D61A8D58E600A1AE88 /* LaunchScreen.xib */,
 				F0F326CB1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld */,
+				F0E73DAD1A9F6ECF00ED9A99 /* Model3toModel4.xcmappingmodel */,
+				F0E73DA81A9F6E7600ED9A99 /* Unit.h */,
+				F0E73DA91A9F6E7600ED9A99 /* Unit.m */,
+				F0E73DA21A9F5E3C00ED9A99 /* Model2toModel3.xcmappingmodel */,
+				F0E73D9F1A9F5DFC00ED9A99 /* Amount.h */,
+				F0E73DA01A9F5DFC00ED9A99 /* Amount.m */,
+				F0E73D9C1A9F5DF000ED9A99 /* Measurement.h */,
+				F0E73D9D1A9F5DF000ED9A99 /* Measurement.m */,
 				F0F326ED1A8D5B3A00A1AE88 /* Item.h */,
 				F0F326EE1A8D5B3A00A1AE88 /* Item.m */,
 				F0F326C41A8D58E600A1AE88 /* Supporting Files */,
@@ -230,8 +258,14 @@
 			files = (
 				F0F326EF1A8D5B3A00A1AE88 /* Item.m in Sources */,
 				F0F326CD1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld in Sources */,
+				F0E73D9E1A9F5DF000ED9A99 /* Measurement.m in Sources */,
 				F0F326CA1A8D58E600A1AE88 /* AppDelegate.m in Sources */,
+				F0E73DAE1A9F6ECF00ED9A99 /* Model3toModel4.xcmappingmodel in Sources */,
+				F0E73DA11A9F5DFC00ED9A99 /* Amount.m in Sources */,
+				F0E73DAA1A9F6E7600ED9A99 /* Unit.m in Sources */,
+				F0E73DA31A9F5E3C00ED9A99 /* Model2toModel3.xcmappingmodel in Sources */,
 				F0F326D01A8D58E600A1AE88 /* ViewController.m in Sources */,
+				F0E73DA61A9F624900ED9A99 /* MigrationViewController.m in Sources */,
 				F0F326C71A8D58E600A1AE88 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,9 +483,11 @@
 			isa = XCVersionGroup;
 			children = (
 				F038C03A1A90061800907DBD /* Grocery_Dude 2.xcdatamodel */,
+				F0E73D981A9F5C8B00ED9A99 /* Grocery_Dude 3.xcdatamodel */,
+				F0E73DA71A9F6E0C00ED9A99 /* Grocery_Dude 4.xcdatamodel */,
 				F0F326CC1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodel */,
 			);
-			currentVersion = F038C03A1A90061800907DBD /* Grocery_Dude 2.xcdatamodel */;
+			currentVersion = F0E73DA71A9F6E0C00ED9A99 /* Grocery_Dude 4.xcdatamodel */;
 			path = Grocery_Dude.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
