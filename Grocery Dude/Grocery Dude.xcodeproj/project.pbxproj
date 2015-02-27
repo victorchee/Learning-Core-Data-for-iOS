@@ -84,6 +84,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB301C1D1AA0629C00746654 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0F326CB1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld */,
+				F0E73DAD1A9F6ECF00ED9A99 /* Model3toModel4.xcmappingmodel */,
+				F0E73DA81A9F6E7600ED9A99 /* Unit.h */,
+				F0E73DA91A9F6E7600ED9A99 /* Unit.m */,
+				F0E73DA21A9F5E3C00ED9A99 /* Model2toModel3.xcmappingmodel */,
+				F0E73D9F1A9F5DFC00ED9A99 /* Amount.h */,
+				F0E73DA01A9F5DFC00ED9A99 /* Amount.m */,
+				F0E73D9C1A9F5DF000ED9A99 /* Measurement.h */,
+				F0E73D9D1A9F5DF000ED9A99 /* Measurement.m */,
+				F0F326ED1A8D5B3A00A1AE88 /* Item.h */,
+				F0F326EE1A8D5B3A00A1AE88 /* Item.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F0F326B81A8D58E600A1AE88 = {
 			isa = PBXGroup;
 			children = (
@@ -114,17 +132,7 @@
 				F0E73DA51A9F624900ED9A99 /* MigrationViewController.m */,
 				F0F326D41A8D58E600A1AE88 /* Images.xcassets */,
 				F0F326D61A8D58E600A1AE88 /* LaunchScreen.xib */,
-				F0F326CB1A8D58E600A1AE88 /* Grocery_Dude.xcdatamodeld */,
-				F0E73DAD1A9F6ECF00ED9A99 /* Model3toModel4.xcmappingmodel */,
-				F0E73DA81A9F6E7600ED9A99 /* Unit.h */,
-				F0E73DA91A9F6E7600ED9A99 /* Unit.m */,
-				F0E73DA21A9F5E3C00ED9A99 /* Model2toModel3.xcmappingmodel */,
-				F0E73D9F1A9F5DFC00ED9A99 /* Amount.h */,
-				F0E73DA01A9F5DFC00ED9A99 /* Amount.m */,
-				F0E73D9C1A9F5DF000ED9A99 /* Measurement.h */,
-				F0E73D9D1A9F5DF000ED9A99 /* Measurement.m */,
-				F0F326ED1A8D5B3A00A1AE88 /* Item.h */,
-				F0F326EE1A8D5B3A00A1AE88 /* Item.m */,
+				BB301C1D1AA0629C00746654 /* Model */,
 				F0F326C41A8D58E600A1AE88 /* Supporting Files */,
 			);
 			path = "Grocery Dude";
