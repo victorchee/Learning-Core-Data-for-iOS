@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Item.h"
 #import "Unit.h"
+#import "Amount.h"
 #import "MigrationViewController.h"
 
 @interface AppDelegate ()
@@ -43,38 +44,18 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
     // Demo
-    // insert
-//    NSArray *newItemNames = @[@"Apples", @"Milk", @"Bread", @"Cheese", @"Sausages", @"Butter", @"Orange Juice", @"Cereal", @"Coffee", @"Eggs", @"Tomatoes", @"Fish"];
-//    for (NSString *newItemName in newItemNames) {
-//        Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
-//        newItem.name = newItemName;
-//    }
-    // fetch
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
-//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-//    request.sortDescriptors = @[sort];
-//    NSPredicate *filter = [NSPredicate predicateWithFormat:@"name != %@", @"Coffee"];
-//    request.predicate = filter;
-//    [self.managedObjectContext executeFetchRequest:request error:nil];
-//    NSFetchRequest *request = [[self.managedObjectModel fetchRequestTemplateForName:@"Test"] copy];
-//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-//    request.sortDescriptors = @[sort];
-//    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:request error:nil];
-    // delete
-//    for (Item *item in fetchedObjects) {
-//        [self.managedObjectContext deleteObject:item];
-//    }
-    
 //    for (int i = 0; i < 5000; ++i) {
-//        Measurement *newMeasurement = [NSEntityDescription insertNewObjectForEntityForName:@"Measurement" inManagedObjectContext:self.managedObjectContext];
-//        newMeasurement.abc = [NSString stringWithFormat:@"-->> LOTS OF TEST DATA x%i", i];
+//        Amount *newAmount = [NSEntityDescription insertNewObjectForEntityForName:@"Amount" inManagedObjectContext:self.managedObjectContext];
+//        newAmount.xyz = [NSString stringWithFormat:@"-->> LOTS OF TEST DATA x%i", i];
 //    }
 //    [self saveContext];
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
-    request.fetchLimit = 50;
-    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:request error:nil];
-    NSLog(@"fetched %lu objects", (unsigned long)fetchedObjects.count);
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Unit"];
+//    request.fetchLimit = 50;
+//    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:request error:nil];
+    //    NSLog(@"fetched %lu objects", (unsigned long)fetchedObjects.count);
+    
+    [self saveContext];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -112,7 +93,7 @@
     
     // Create the coordinator and store
     // 轻量级的迁移方式
-    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES, NSInferMappingModelAutomaticallyOption: @NO};
+    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @NO, NSInferMappingModelAutomaticallyOption: @NO};
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Grocery_Dude.sqlite"];
@@ -134,7 +115,6 @@
             abort();
         }
     }
-    
     return _persistentStoreCoordinator;
 }
 
@@ -171,11 +151,10 @@
     
     // Step 1 - Gather the Source, Destination and Mapping Model
     NSDictionary *sourceMetadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:sourceStore error:nil];
-    NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:nil forStoreMetadata:sourceMetadata];
+    NSManagedObjectModel *sourceModel = [NSManagedObjectModel mergedModelFromBundles:@[[NSBundle mainBundle]] forStoreMetadata:sourceMetadata];
     
     NSManagedObjectModel *destinModel = self.managedObjectModel;
-    
-    NSMappingModel *mappingModel = [NSMappingModel mappingModelFromBundles:nil forSourceModel:sourceModel destinationModel:destinModel];
+    NSMappingModel *mappingModel = [NSMappingModel mappingModelFromBundles:@[[NSBundle mainBundle]] forSourceModel:sourceModel destinationModel:destinModel];
     
     // Setp 2 - Perform migration, assuming the mapping model isn't null
     if (mappingModel) {
