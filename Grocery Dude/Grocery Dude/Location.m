@@ -1,18 +1,16 @@
 //
-//  Unit.m
+//  Location.m
 //  Grocery Dude
 //
 //  Created by Victor Chee on 15/3/18.
 //  Copyright (c) 2015年 Victor Chee. All rights reserved.
 //
 
-#import "Unit.h"
-#import "Item.h"
+#import "Location.h"
 
 
-@implementation Unit
+@implementation Location
 
-@dynamic name;
-@dynamic items;
+@dynamic summary;
 
 @end

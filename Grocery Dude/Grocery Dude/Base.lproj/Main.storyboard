@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="elG-vL-yaD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hrf-Uu-JC9">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Items-->
         <scene sceneID="8sE-RZ-9Bt">
             <objects>
-                <tableViewController id="mXq-Cd-bzH" sceneMemberID="viewController">
+                <tableViewController id="mXq-Cd-bzH" customClass="PrepareTableViewContorller" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5MH-bs-PPw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item Cell" textLabel="2jM-RZ-fMN" style="IBUITableViewCellStyleDefault" id="zz6-qC-oB1">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Item Cell" textLabel="2jM-RZ-fMN" style="IBUITableViewCellStyleDefault" id="zz6-qC-oB1">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zz6-qC-oB1" id="sqd-8s-QIT">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -23,7 +23,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2jM-RZ-fMN">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -46,6 +46,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tva-4a-ckP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-136" y="479"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="47F-Fs-fu0">
+            <objects>
+                <tabBarController id="hrf-Uu-JC9" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="v9g-L4-oOa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="elG-vL-yaD" kind="relationship" relationship="viewControllers" id="KCA-eN-0i9"/>
+                        <segue destination="wWA-PU-dP7" kind="relationship" relationship="viewControllers" id="oBn-iB-3hx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A96-MI-zRU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1588" y="837"/>
         </scene>
         <!--Migration View Controller-->
         <scene sceneID="FJr-gR-8H4">
@@ -71,7 +90,7 @@
                                     <constraint firstAttribute="height" constant="30" id="7DC-zF-Yu5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -95,10 +114,11 @@
             </objects>
             <point key="canvasLocation" x="-846" y="-190"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Prepare-->
         <scene sceneID="esa-r8-nw6">
             <objects>
                 <navigationController id="elG-vL-yaD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Prepare" image="prepare" id="FsE-qH-d05"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b80-bj-if0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -110,6 +130,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpK-pr-bUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-846" y="479"/>
+        </scene>
+        <!--Grocery Dude-->
+        <scene sceneID="0Po-A1-NfL">
+            <objects>
+                <tableViewController id="Sd8-oB-vgz" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Xo-bJ-I6f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Shop Cell" id="mJb-B5-GNS">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJb-B5-GNS" id="Rff-5W-wkE">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sd8-oB-vgz" id="vpD-ix-Hzs"/>
+                            <outlet property="delegate" destination="Sd8-oB-vgz" id="q7p-HJ-0zY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Grocery Dude" id="68t-7T-dEZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOs-U0-tvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="1238"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="feg-UV-ObR">
+            <objects>
+                <navigationController id="wWA-PU-dP7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Shop" image="shop" id="gxe-Sl-hCQ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OfG-Wm-PA4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Sd8-oB-vgz" kind="relationship" relationship="rootViewController" id="NIG-6s-rLJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f21-6r-4TG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-846" y="1238"/>
         </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
@@ -130,4 +194,8 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="prepare" width="28" height="22"/>
+        <image name="shop" width="30" height="25"/>
+    </resources>
 </document>

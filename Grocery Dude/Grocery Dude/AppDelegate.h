@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "MigrationViewController.h"
+#import "Item.h"
+#import "Unit.h"
+#import "LocationAtHome.h"
+#import "LocationAtShop.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
