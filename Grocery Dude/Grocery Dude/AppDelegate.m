@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "Item.h"
 #import "Unit.h"
-#import "Amount.h"
+#import "LocationAtHome.h"
+#import "LocationAtShop.h"
 #import "MigrationViewController.h"
 
 @interface AppDelegate ()
