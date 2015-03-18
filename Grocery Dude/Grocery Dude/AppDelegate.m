@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "Item.h"
+#import "Unit.h"
+#import "Amount.h"
+#import "MigrationViewController.h"
 
 @interface AppDelegate ()
 
@@ -101,6 +105,7 @@
     // Create the coordinator and store
     // 轻量级的迁移方式
     NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES, NSInferMappingModelAutomaticallyOption: @YES};
+
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Grocery_Dude.sqlite"];
@@ -118,7 +123,6 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
     return _persistentStoreCoordinator;
 }
 
