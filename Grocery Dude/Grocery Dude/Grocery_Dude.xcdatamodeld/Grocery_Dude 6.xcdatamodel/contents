@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1510" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="collected" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="listed" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
@@ -25,12 +25,14 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Item" inverseName="unit" inverseEntity="Item" syncable="YES"/>
     </entity>
-    <fetchRequest name="Test" entity="Item" predicateString="name CONTAINS &quot;e&quot;"/>
+    <fetchRequest name="ShoppingList" entity="Item" predicateString="listed == 1"/>
+    <fetchRequest name="UnknownLocationAtHome" entity="LocationAtHome" predicateString="storedIn == &quot;..Unknown Location..&quot;"/>
+    <fetchRequest name="UnknownLocationAtShop" entity="LocationAtShop" predicateString="aisle == &quot;..Unknown Location..&quot;"/>
     <elements>
         <element name="Item" positionX="25" positionY="-1" width="128" height="163"/>
-        <element name="Unit" positionX="205" positionY="89" width="128" height="73"/>
         <element name="Location" positionX="45" positionY="-198" width="128" height="58"/>
         <element name="LocationAtHome" positionX="-119" positionY="-117" width="128" height="73"/>
         <element name="LocationAtShop" positionX="169" positionY="-117" width="128" height="73"/>
+        <element name="Unit" positionX="205" positionY="89" width="128" height="73"/>
     </elements>
 </model>

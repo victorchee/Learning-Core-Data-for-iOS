@@ -36,6 +36,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Items" id="sfg-du-4IY">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="MyG-EA-awc">
+                            <connections>
+                                <action selector="clear:" destination="mXq-Cd-bzH" id="XGS-BS-hPV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="b1b-m9-dXa">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" identifier="Add Item Segue" id="NmK-vj-JiO"/>
@@ -134,16 +139,24 @@
         <!--Grocery Dude-->
         <scene sceneID="0Po-A1-NfL">
             <objects>
-                <tableViewController id="Sd8-oB-vgz" sceneMemberID="viewController">
+                <tableViewController id="Sd8-oB-vgz" customClass="ShopTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Xo-bJ-I6f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Shop Cell" id="mJb-B5-GNS">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Shop Cell" textLabel="EQ0-gS-Vki" style="IBUITableViewCellStyleDefault" id="mJb-B5-GNS">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJb-B5-GNS" id="Rff-5W-wkE">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EQ0-gS-Vki">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -152,7 +165,13 @@
                             <outlet property="delegate" destination="Sd8-oB-vgz" id="q7p-HJ-0zY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grocery Dude" id="68t-7T-dEZ"/>
+                    <navigationItem key="navigationItem" title="Grocery Dude" id="68t-7T-dEZ">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="dJH-VB-Dqp">
+                            <connections>
+                                <action selector="clear:" destination="Sd8-oB-vgz" id="Vd2-r8-mCA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOs-U0-tvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,7 +197,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemVC" id="BYZ-38-t0r" customClass="ItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -186,12 +205,65 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icP-so-IEI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yNx-HV-3K9">
+                                        <rect key="frame" x="8" y="106" width="584" height="48"/>
+                                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="5Pe-E5-ePv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Qty" borderStyle="line" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9Z-sb-o4x">
+                                        <rect key="frame" x="8" y="162" width="97" height="60"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="Noz-hz-2gb"/>
+                                            <constraint firstAttribute="height" constant="60" id="c3G-6m-PQC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yNx-HV-3K9" firstAttribute="centerX" secondItem="icP-so-IEI" secondAttribute="centerX" id="53v-tQ-7aL"/>
+                                    <constraint firstItem="yNx-HV-3K9" firstAttribute="top" secondItem="icP-so-IEI" secondAttribute="top" constant="106" id="6xX-Jc-KN7"/>
+                                    <constraint firstAttribute="bottom" secondItem="p9Z-sb-o4x" secondAttribute="bottom" constant="378" id="BS6-iF-b5K"/>
+                                    <constraint firstItem="p9Z-sb-o4x" firstAttribute="top" secondItem="yNx-HV-3K9" secondAttribute="bottom" constant="8" symbolic="YES" id="jxa-BO-VWn"/>
+                                    <constraint firstItem="yNx-HV-3K9" firstAttribute="leading" secondItem="p9Z-sb-o4x" secondAttribute="leading" id="p9f-SN-loO"/>
+                                    <constraint firstItem="yNx-HV-3K9" firstAttribute="trailing" secondItem="icP-so-IEI" secondAttribute="trailingMargin" id="qM1-Xz-bXi"/>
+                                    <constraint firstItem="yNx-HV-3K9" firstAttribute="leading" secondItem="icP-so-IEI" secondAttribute="leadingMargin" id="vnz-dM-Eob"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="icP-so-IEI" secondAttribute="trailing" id="7gG-p6-rdu"/>
+                            <constraint firstAttribute="bottom" secondItem="icP-so-IEI" secondAttribute="bottom" id="Cxa-Tr-usv"/>
+                            <constraint firstItem="icP-so-IEI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GcH-V2-ueC"/>
+                            <constraint firstItem="icP-so-IEI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jzy-kA-ULD"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Item" id="RJa-a0-dpX"/>
+                    <navigationItem key="navigationItem" title="Item" id="RJa-a0-dpX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bos-Wt-88D">
+                            <connections>
+                                <action selector="done:" destination="BYZ-38-t0r" id="ZnU-KK-xCR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="yNx-HV-3K9" id="Rod-zK-MDZ"/>
+                        <outlet property="quantityTextField" destination="p9Z-sb-o4x" id="bsS-Az-4t0"/>
+                        <outlet property="scrollView" destination="icP-so-IEI" id="Uw5-1G-gim"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="618" y="479"/>
         </scene>
     </scenes>
     <resources>

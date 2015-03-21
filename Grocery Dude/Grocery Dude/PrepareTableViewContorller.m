@@ -8,8 +8,12 @@
 
 #import "PrepareTableViewContorller.h"
 #import "AppDelegate.h"
+#import "ItemViewController.h"
 
 @interface PrepareTableViewContorller ()
+
+@property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -18,6 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
+    self.managedObjectContext = appDelegate.managedObjectContext;
+    self.managedObjectModel = appDelegate.managedObjectModel;
+    
     [self configureFetch];
     [self performFetch];
     
@@ -31,15 +41,56 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clear:(UIBarButtonItem *)sender {
+    NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"ShoppingList"];
+    NSArray *shoppingList = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    if (shoppingList.count) {
+        self.clearConfirmActionSheet = [[UIActionSheet alloc] initWithTitle:@"Clear Entire Shopping List?"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"Cancel"
+                                                     destructiveButtonTitle:@"Clear"
+                                                          otherButtonTitles: nil];
+        [self.clearConfirmActionSheet showFromTabBar:self.navigationController.tabBarController.tabBar];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nothing to Clear"
+                                                        message:@"Add items to the Shop tab by tapping them on the Prepare tab. Remove all items from the Shopp tab by clicking Clear on the Prepare tab"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+    
+    shoppingList = nil;
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([actionSheet isEqual:self.clearConfirmActionSheet]) {
+        if (buttonIndex == actionSheet.destructiveButtonIndex) {
+            [self clearList];
+        } else if (buttonIndex == actionSheet.cancelButtonIndex) {
+            [actionSheet dismissWithClickedButtonIndex:buttonIndex animated:YES];
+        }
+    }
+}
+
+- (void)clearList
+{
+    NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"ShoppingList"];
+    NSArray *shoppingList = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    for (Item *item in shoppingList) {
+        item.listed = @NO;
+    }
+}
+
 - (void)configureFetch
 {
-    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"locationAtHome.storedIn" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     request.fetchBatchSize = 50;
     
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:@"locationAtHome.storedIn" cacheName:nil];
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"locationAtHome.storedIn" cacheName:nil];
     self.fetchedResultsController.delegate = self;
 }
 
@@ -92,5 +143,28 @@
         item.collected = @NO;
     }
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    ItemViewController *itemVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemVC"];
+    itemVC.selectedItemID = [[self.fetchedResultsController objectAtIndexPath:indexPath] objectID];
+    [self.navigationController pushViewController:itemVC animated:YES];
+}
+
+#pragma mark - segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Add Item Segue"]) {
+        Item *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
+        
+        NSError *error = nil;
+        if (![self.managedObjectContext obtainPermanentIDsForObjects:@[newItem] error:&error]) {
+            NSLog(@"Couldn't obtain a permanent ID for object %@", error);
+        } else {
+            ItemViewController *itemVC = segue.destinationViewController;
+            itemVC.selectedItemID = newItem.objectID;
+        }
+    }
 }
 @end
